@@ -1,0 +1,4 @@
+data/
+supportscripts/
+*.pyc
+keys.py

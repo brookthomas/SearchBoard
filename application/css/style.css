@@ -1,0 +1,73 @@
+/* Main Containers */
+
+.header {
+    padding:40px;
+}
+
+.search {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.results {
+    margin-top:40px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size:24px;
+}
+
+/* Game Cards */
+
+.game-card {
+    width:420px;
+    margin:20px 0px;
+}
+
+.mdl-card__title {
+    min-height: 160px;
+    max-height: 160px;
+    background-size:cover;
+}
+
+.game-card .mdl-card__supporting-text {
+    display:flex;
+    justify-content: space-between;
+    padding: 12px 24px;
+    background-color:#457385;
+    color:white;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+}
+
+.game-card .mdl-card__supporting-text .title {
+    font-size:1.7em;
+}
+
+.game-card .mdl-card__supporting-text .score {
+    font-size:1.4em;
+}
+
+.game-card .excerpt {
+    display:inline-block;
+    font-style: italic;
+    padding:1em 1.5em;
+    color:#457385;
+}
+
+.game-card .excerpt .highlight {
+    background-color: #457385;
+    color:white;
+}
+
+.game-card .metrics {
+    display:flex;
+    justify-content: space-around;
+    color: rgb(140,140,140);
+}
+
+.game-card .metrics .metric-title {
+    color: #457385;
+    padding-right:8px;
+}
+

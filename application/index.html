@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width = device-width, initial-scale = 1">
+
+	<title>SearchBoard</title>
+
+    <!-- timer function -->
+    <!-- From: https://stackoverflow.com/questions/1909441/jquery-keyup-delay -->
+    <script>
+    var delay = (function(){var timer = 0; return function(callback, ms){clearTimeout (timer);timer = setTimeout(callback, ms);};})();
+    </script>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- handlebars -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.runtime.min.js"></script>
+    <script src="templates/templates.js"></script>
+
+    <!-- PorterJS -->
+    <!-- Source: https://github.com/jedp/porter-stemmer -->
+    <script src="js/porterJS/porterJS.min.js"></script>
+
+	<!-- MDL -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <!-- Local JS -->
+    <script src="js/Recommender.js"></script>
+
+	<!-- Local CSS -->
+	<link rel="stylesheet" href="css/style.css">
+
+    <!-- Data -->
+    <script type="application/javascript" src="./data/full/idf"></script>
+    <script type="application/javascript" src="./data/full/bm25"></script>
+    <script type="application/javascript" src="./data/full/positional_index"></script>
+    <script type="application/javascript" src="./data/full/sentences"></script>
+    <script type="application/javascript" src="./data/full/sentiment"></script>
+    <script type="application/javascript" src="./data/full/games"></script>
+
+</head>
+<body>
+    <div class='header'>
+    </div>
+    <div class='search'>
+        <form on-submit='return false;'>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="search-input">
+            <label class="mdl-textfield__label" for="sample3">Find Games By Keyword</label>
+          </div>
+        </form>
+    </div>
+    <div class='results'>
+
+    </div>
+    <script>
+        rec = new Recommender();
+        $('input').keyup(function() {
+            delay(function(){
+            rec.run($('#search-input').val());
+            }, 250 );
+        });
+    </script>
+</body>
+</html>
