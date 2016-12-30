@@ -1,11 +1,10 @@
-SearchBoard
-===========
-Brook Thomas
+# SearchBoard
 
-A Board Game Recommendation Engine powered by the Okapi BM25 Algorithm and Microsoft Cognitive Services Sentiment Analyzer.
+A board game recommendation engine using the Okapi BM25 Algorithm and Microsoft Cognitive Services Sentiment Analysis.
 
-Board Game Data provided by the BoardGameGeek.com API.
+Data from the BoardGameGeek.com API. 
 
-The program is split into two functional areas:
-    *   recommender/    Program files for generating the data.
-    *   application/    Application files for browsing the data.
+The application is split into two functional areas:
+
+* recommender/ -- scripts for generating rank and sentiment data from a TREC-formatted collection.
+* application/ -- a sample application demonstrating the utility of the data.
